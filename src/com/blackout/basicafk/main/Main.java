@@ -21,6 +21,7 @@ public class Main extends JavaPlugin implements Listener {
 
 	public static List<AfkPlayer> players = new ArrayList<AfkPlayer>();
 	public static int afkDelay = 60;
+	public static String afkDisplay = " §4§lAFK§r";
 	
 	@Override
 	public void onEnable() {

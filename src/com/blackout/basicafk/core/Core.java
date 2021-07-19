@@ -32,9 +32,11 @@ public class Core {
 			p.setDelay(p.getDelay() - 1);
 			
 			if (p.getDelay() <= 0) {
-				p.getPlayer().setPlayerListName(p.getPlayer().getDisplayName()+" §4§lAFK§r");
+				p.getPlayer().setPlayerListName(p.getPlayer().getDisplayName()+Main.afkDisplay);
+				p.setAfk(true);
 			} else {
-				p.getPlayer().setPlayerListName(p.getPlayer().getDisplayName().replace(" §4§lAFK§r", ""));
+				p.getPlayer().setPlayerListName(p.getPlayer().getDisplayName().replace(Main.afkDisplay, ""));
+				p.setAfk(false);
 			}
 		}
 	}
