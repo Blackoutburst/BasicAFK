@@ -1,4 +1,4 @@
-package com.blackout.core;
+package com.blackout.basicafk.core;
 
 import org.bukkit.entity.Player;
 

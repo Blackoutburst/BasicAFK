@@ -1,8 +1,8 @@
-package com.blackout.core;
+package com.blackout.basicafk.core;
 
 import org.bukkit.scheduler.BukkitRunnable;
 
-import com.blackout.main.Main;
+import com.blackout.basicafk.main.Main;
 
 public class Core {
 

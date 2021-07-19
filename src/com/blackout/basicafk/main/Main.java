@@ -1,4 +1,4 @@
-package com.blackout.main;
+package com.blackout.basicafk.main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.blackout.core.AfkPlayer;
-import com.blackout.core.Core;
+import com.blackout.basicafk.core.AfkPlayer;
+import com.blackout.basicafk.core.Core;
 
 public class Main extends JavaPlugin implements Listener {
 
