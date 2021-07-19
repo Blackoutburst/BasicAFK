@@ -1,5 +1,6 @@
 package com.blackout.basicafk.main;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.blackout.basicafk.core.AfkPlayer;
 import com.blackout.basicafk.core.Core;
+import com.blackout.basicafk.core.YmlManager;
+import com.blackout.basicafk.utils.Utils;
 
 public class Main extends JavaPlugin implements Listener {
 
@@ -27,6 +30,13 @@ public class Main extends JavaPlugin implements Listener {
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
 		new Core();
+		
+		try {
+			Utils.createFile();
+			YmlManager.createConfigFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void onPlayerJoin(PlayerJoinEvent event) {
