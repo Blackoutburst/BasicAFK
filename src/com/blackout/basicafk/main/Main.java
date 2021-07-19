@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDamageEvent;
@@ -15,6 +17,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.blackout.basicafk.commands.CommandManager;
 import com.blackout.basicafk.core.AfkPlayer;
 import com.blackout.basicafk.core.Core;
 import com.blackout.basicafk.core.YmlManager;
@@ -39,6 +42,7 @@ public class Main extends JavaPlugin implements Listener {
 		}
 	}
 	
+	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		players.add(new AfkPlayer(event.getPlayer(), false, afkDelay));
 	}
@@ -71,5 +75,11 @@ public class Main extends JavaPlugin implements Listener {
 	@EventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent event) {
 		AfkPlayer.get(event.getPlayer()).setDelay(afkDelay);
+	}
+	
+	@Override
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		new CommandManager().execute(sender, command, label, args);
+		return true;
 	}
 }

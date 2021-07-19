@@ -2,6 +2,8 @@ package com.blackout.basicafk.core;
 
 import org.bukkit.entity.Player;
 
+import com.blackout.basicafk.main.Main;
+
 public class AfkPlayer {
 
 	protected Player player;
@@ -37,6 +39,9 @@ public class AfkPlayer {
 	}
 	
 	public static AfkPlayer get(Player player) {
+		for (AfkPlayer p : Main.players)
+			if (p.player.getUniqueId().equals(player.getUniqueId()))
+				return (p);
 		return (null);
 	}
 	

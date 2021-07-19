@@ -25,7 +25,7 @@ public class CommandSetAfkTime {
 		Main.afkDelay = value;
 		
 		try {
-			YmlManager.load();
+			YmlManager.save();
 		} catch (Exception e) {
 			sender.sendMessage("§cError while saving the configuration file please check the console");
 			e.printStackTrace();

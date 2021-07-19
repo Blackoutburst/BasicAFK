@@ -21,7 +21,7 @@ public class YmlManager {
 			YamlConfiguration config = YamlConfiguration.loadConfiguration(configFile);
 			
 			config.set("afkDelay", 60);
-			config.set("afkDisplay", " §4§lAFK§r");
+			config.set("afkDisplay", Main.afkDisplay);
 			config.save(configFile);
 		} else {
 			try {
@@ -39,7 +39,7 @@ public class YmlManager {
 		YamlConfiguration config = YamlConfiguration.loadConfiguration(new File("plugins/BasicAFK/config.yml"));
 		
 		Main.afkDelay = config.getInt("afkDelay");
-		Main.afkDisplay = config.getString("afkDisplay");
+		Main.afkDisplay = config.getString("afkDisplay").replace("&", "§");
 	}
 	
 	/**
