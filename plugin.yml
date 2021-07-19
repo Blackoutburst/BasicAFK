@@ -1,0 +1,20 @@
+main: com.blackout.basicafk.main.Main
+name: BasicAPI
+version: 1.0
+api-version: 1.13
+author: Blackoutburst
+description: Simple Afk plugin
+commands:
+  setAfkTime:
+    description: Set the new afk delay default value is 60s
+    usage: /setAfkTime [value]
+    permission: basicafk.setAfkTime
+  reload:
+    description: Reload the configuration file
+    usage: /reload
+    permission: basicafk.reload
+  afk:
+    description: Set the player AFK
+    usage: /afk
+    permission: basicafk.afk
+    
