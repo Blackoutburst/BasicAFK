@@ -1,5 +1,5 @@
 main: com.blackout.basicafk.main.Main
-name: BasicAPI
+name: BasicAFK
 version: 1.0
 api-version: 1.13
 author: Blackoutburst
